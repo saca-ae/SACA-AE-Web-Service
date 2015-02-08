@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.5" name="SACAAEdb">
+  <DataContextMoniker Name="/SACAAEdbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="540a20d5-a745-4b12-b547-6bb20c96b09d" absoluteBounds="3.5, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SACAAEdbDataContext/Profesore" />
+      <nestedChildShapes>
+        <elementListCompartment Id="915e1ba6-632c-41cf-9bab-f60efc890b57" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5b2b73f-dd69-4c0a-9b94-e681b0608136" absoluteBounds="6.25, 2.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/SACAAEdbDataContext/ProyectosXProfesor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25e2f65b-8e85-4389-a530-49f67028b965" absoluteBounds="6.265, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.01044840494792); (5.79166666666667 : 4.01044840494792 : JumpStart); (5.95833333333333 : 4.01044840494792 : JumpEnd); (6.25 : 4.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Profesore/Profesore_ProyectosXProfesor" />
+      <nodes>
+        <classShapeMoniker Id="540a20d5-a745-4b12-b547-6bb20c96b09d" />
+        <classShapeMoniker Id="d5b2b73f-dd69-4c0a-9b94-e681b0608136" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bc994da3-14b1-4a25-8c6f-77421f0e0fa3" absoluteBounds="3.5, 1, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/SACAAEdbDataContext/Proyecto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7861cd19-fd4d-4ced-bd84-98026f560cf0" absoluteBounds="3.5149999999999997, 1.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.73159912109375); (6.25 : 2.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Proyecto/Proyecto_ProyectosXProfesor" />
+      <nodes>
+        <classShapeMoniker Id="bc994da3-14b1-4a25-8c6f-77421f0e0fa3" />
+        <classShapeMoniker Id="d5b2b73f-dd69-4c0a-9b94-e681b0608136" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="862b557c-5b11-4e32-8588-ecd6c921f73d" absoluteBounds="3.5, 7.875, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/SACAAEdbDataContext/Horario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9558965b-8296-4413-9e34-9cbbee2b8d09" absoluteBounds="3.515, 8.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.48381883638822 : 7.875); (5.875 : 7.48381883638822); (5.875 : 3.61584916796875); (6.25 : 3.61584916796875)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Horario/Horario_ProyectosXProfesor" />
+      <nodes>
+        <classShapeMoniker Id="862b557c-5b11-4e32-8588-ecd6c921f73d" />
+        <classShapeMoniker Id="d5b2b73f-dd69-4c0a-9b94-e681b0608136" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="424392d3-12c8-4f9f-b20b-69e89e346645" absoluteBounds="6.25, 7.5, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/SACAAEdbDataContext/Dia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c21608d8-460a-4874-83f2-f5005d6a978f" absoluteBounds="6.265, 7.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 8.40709804036458); (6.25 : 8.40709804036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Horario/Horario_Dia" />
+      <nodes>
+        <classShapeMoniker Id="862b557c-5b11-4e32-8588-ecd6c921f73d" />
+        <classShapeMoniker Id="424392d3-12c8-4f9f-b20b-69e89e346645" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4850664d-6224-43c5-8601-87f23dc88219" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SACAAEdbDataContext/Estado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="299b375e-2deb-4413-b416-b61f22d7e3fe" absoluteBounds="0.76500000000000012, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 3.94399251302083); (1.75 : 4.82859587760417); (3.5 : 4.82859587760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Estado/Estado_Profesore" />
+      <nodes>
+        <classShapeMoniker Id="4850664d-6224-43c5-8601-87f23dc88219" />
+        <classShapeMoniker Id="540a20d5-a745-4b12-b547-6bb20c96b09d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 2.75); (1.75 : 1.8749995); (2.19791916666667 : 1.8749995 : JumpStart); (2.36458583333333 : 1.8749995 : JumpEnd); (3.5 : 1.8749995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Estado/Estado_Proyecto" />
+      <nodes>
+        <classShapeMoniker Id="4850664d-6224-43c5-8601-87f23dc88219" />
+        <classShapeMoniker Id="bc994da3-14b1-4a25-8c6f-77421f0e0fa3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1ba03bae-566b-483c-aa35-58ffe8521b92" absoluteBounds="6.125, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SACAAEdbDataContext/Comisione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1857f6fe-f4b5-40c6-b19a-c7d3761951c0" absoluteBounds="6.14, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.2812525 : 2.75); (2.2812525 : 0.71875); (6.125 : 0.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Estado/Estado_Comisione" />
+      <nodes>
+        <classShapeMoniker Id="4850664d-6224-43c5-8601-87f23dc88219" />
+        <classShapeMoniker Id="1ba03bae-566b-483c-aa35-58ffe8521b92" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="31266acd-5294-401e-8be6-25b10fc4acd2" absoluteBounds="6.875, 4.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SACAAEdbDataContext/ComisionesXProfesor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79f296d5-c60d-482a-82d5-090e22b87310" absoluteBounds="6.89, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 1.38544840494792); (8.59375 : 1.38544840494792); (8.59375 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Comisione/Comisione_ComisionesXProfesor" />
+      <nodes>
+        <classShapeMoniker Id="1ba03bae-566b-483c-aa35-58ffe8521b92" />
+        <classShapeMoniker Id="31266acd-5294-401e-8be6-25b10fc4acd2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.92277195923478); (6.03125 : 7.39152195923478); (6.03125 : 5.63544840494792); (6.875 : 5.63544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Horario/Horario_ComisionesXProfesor" />
+      <nodes>
+        <classShapeMoniker Id="862b557c-5b11-4e32-8588-ecd6c921f73d" />
+        <classShapeMoniker Id="31266acd-5294-401e-8be6-25b10fc4acd2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.13022420247396); (5.79166666666667 : 5.13022420247396 : JumpStart); (5.95833333333333 : 5.13022420247396 : JumpEnd); (6.875 : 5.13022420247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SACAAEdbDataContext/Profesore/Profesore_ComisionesXProfesor" />
+      <nodes>
+        <classShapeMoniker Id="540a20d5-a745-4b12-b547-6bb20c96b09d" />
+        <classShapeMoniker Id="31266acd-5294-401e-8be6-25b10fc4acd2" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

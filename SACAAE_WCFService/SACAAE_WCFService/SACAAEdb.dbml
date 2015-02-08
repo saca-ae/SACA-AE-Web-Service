@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SACAAEDB" Class="SACAAEdbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost\SQLExpress;Initial Catalog=SACAAEDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SACAAEDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Profesores" Member="Profesores">
+    <Type Name="Profesore">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Plaza" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="HorasEnPropiedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Profesore_ProyectosXProfesor" Member="ProyectosXProfesors" ThisKey="ID" OtherKey="Profesor" Type="ProyectosXProfesor" />
+      <Association Name="Profesore_ComisionesXProfesor" Member="ComisionesXProfesors" ThisKey="ID" OtherKey="Profesor" Type="ComisionesXProfesor" />
+      <Association Name="Estado_Profesore" Member="Estado1" ThisKey="Estado" OtherKey="Id" Type="Estado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProyectosXProfesor" Member="ProyectosXProfesors">
+    <Type Name="ProyectosXProfesor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Proyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Profesor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Periodo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Horario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Profesore_ProyectosXProfesor" Member="Profesore" ThisKey="Profesor" OtherKey="ID" Type="Profesore" IsForeignKey="true" />
+      <Association Name="Proyecto_ProyectosXProfesor" Member="Proyecto1" ThisKey="Proyecto" OtherKey="ID" Type="Proyecto" IsForeignKey="true" />
+      <Association Name="Horario_ProyectosXProfesor" Member="Horario1" ThisKey="Horario" OtherKey="Id" Type="Horario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proyectos" Member="Proyectos">
+    <Type Name="Proyecto">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Inicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Fin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="Proyecto_ProyectosXProfesor" Member="ProyectosXProfesors" ThisKey="ID" OtherKey="Proyecto" Type="ProyectosXProfesor" />
+      <Association Name="Estado_Proyecto" Member="Estado1" ThisKey="Estado" OtherKey="Id" Type="Estado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Horario" Member="Horarios">
+    <Type Name="Horario">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Horario_ProyectosXProfesor" Member="ProyectosXProfesors" ThisKey="Id" OtherKey="Horario" Type="ProyectosXProfesor" />
+      <Association Name="Horario_Dia" Member="Dias" ThisKey="Id" OtherKey="Horario" Type="Dia" />
+      <Association Name="Horario_ComisionesXProfesor" Member="ComisionesXProfesors" ThisKey="Id" OtherKey="Horario" Type="ComisionesXProfesor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dia" Member="Dias">
+    <Type Name="Dia">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dia" Member="Dia1" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Horario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hora_Inicio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hora_Fin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Horario_Dia" Member="Horario1" ThisKey="Horario" OtherKey="Id" Type="Horario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado" Member="Estados">
+    <Type Name="Estado">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="Estado_Profesore" Member="Profesores" ThisKey="Id" OtherKey="Estado" Type="Profesore" />
+      <Association Name="Estado_Proyecto" Member="Proyectos" ThisKey="Id" OtherKey="Estado" Type="Proyecto" />
+      <Association Name="Estado_Comisione" Member="Comisiones" ThisKey="Id" OtherKey="Estado" Type="Comisione" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comisiones" Member="Comisiones">
+    <Type Name="Comisione">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Inicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Fin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Comisione_ComisionesXProfesor" Member="ComisionesXProfesors" ThisKey="ID" OtherKey="Comision" Type="ComisionesXProfesor" />
+      <Association Name="Estado_Comisione" Member="Estado1" ThisKey="Estado" OtherKey="Id" Type="Estado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComisionesXProfesor" Member="ComisionesXProfesors">
+    <Type Name="ComisionesXProfesor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Comision" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Profesor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Periodo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Horario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Comisione_ComisionesXProfesor" Member="Comisione" ThisKey="Comision" OtherKey="ID" Type="Comisione" IsForeignKey="true" />
+      <Association Name="Horario_ComisionesXProfesor" Member="Horario1" ThisKey="Horario" OtherKey="Id" Type="Horario" IsForeignKey="true" />
+      <Association Name="Profesore_ComisionesXProfesor" Member="Profesore" ThisKey="Profesor" OtherKey="ID" Type="Profesore" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetProfessorsByProjectID" Method="GetProfessorsByProjectID">
+    <Parameter Name="ProjectID" Parameter="projectID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetProfessorsByProjectIDResult">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
